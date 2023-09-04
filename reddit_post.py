@@ -40,9 +40,9 @@ list_of_reddits = reddit.user.subreddits(limit=None)
 # for reddit_name in list_of_reddits:
 #     print(reddit_name,'----------------->')
 #     try:
-#         for template in reddit.subreddit("IndianGaming").flair.templates:
-#             # if reddit_name=="IndianGaming":
-#             print(template['text']+"———————>"+template['id'])
+    #         for template in reddit.subreddit("IndianGaming").flair.templates:
+    #             # if reddit_name=="IndianGaming":
+    #             print(template['text']+"———————>"+template['id'])
 #             # pass
 #     except:
 #         print("No Flair Found")
