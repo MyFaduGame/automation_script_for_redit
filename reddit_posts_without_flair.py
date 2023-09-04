@@ -53,68 +53,75 @@ descriptions = [
     "Join the Reddit revolution with these must-see posts!",
 ]
 
-for i in REDDIT_CLIENT_SUBREDDIT_POST_LIST:
-    print(i)
-    try:
-        title = random.choice(titles)
-        print(title)
-        description = random.choice(descriptions)
-        print(description)
-        for template in reddit.subreddit(i).flair.link_templates:
-            if i == "gaming":
-                try:
-                    subreddit = reddit.subreddit(i)
-                    subreddit.submit(
-                        title=title,
-                        # url=channel_url,
-                        selftext=channel_url+description,
-                        # flair_id=template["id"]
-                    )
-                    print(f"{i} Fulfiled --------------->")
-                except Exception as error:
-                    print(error,"------------->")
-                    print(i,' dosen\'t full fill request')
-            if i=="SmallYTChannel" and template["text"]=="Gaming":
-                try:
-                    subreddit = reddit.subreddit(i)
-                    subreddit.submit(
-                        title=title,
-                        # url=channel_url,
-                        selftext=channel_url+description,
-                        flair_id=template["id"]
-                    )
-                    print(f"{i} Fulfiled --------------->")
-                except Exception as error:
-                    print(error,"------------->")
-                    print(i,' dosen\'t full fill request')
-            if i=="youtube" and template["text"]=="Promotion":
-                try:
-                    subreddit = reddit.subreddit(i)
-                    subreddit.submit(
-                        title=title,
-                        # url=channel_url,
-                        selftext=channel_url+description,
-                        flair_id=template["id"]
-                    )
-                    print(f"{i} Fulfiled --------------->")
-                except Exception as error:
-                    print(error,"------------->")
-                    print(i,' dosen\'t full fill request')
-            if i=="YouTubeSubscribeBoost" and template["text"]=="Subscribe!:upvote:":
-                try:
-                    subreddit = reddit.subreddit(i)
-                    subreddit.submit(
-                        title=title,
-                        # url=channel_url,
-                        selftext=channel_url+description,
-                        flair_id=template["id"]
-                    )
-                    print(f"{i} Fulfiled --------------->")
-                except Exception as error:
-                    print(error,"------------->")
-                    print(i,' dosen\'t full fill request')
-    except:
-        print(f"Can't Find {i} Tags")
+# for i in REDDIT_CLIENT_SUBREDDIT_POST_LIST:
+#     print(i)
+#     try:
+#         title = random.choice(titles)
+#         print(title)
+#         description = random.choice(descriptions)
+#         print(description)
+#         for template in reddit.subreddit(i).flair.link_templates:
+#             if i == "gaming":
+#                 try:
+#                     subreddit = reddit.subreddit(i)
+#                     subreddit.submit(
+#                         title=title,
+#                         # url=channel_url,
+#                         selftext=channel_url+description,
+#                         flair_id="9e727fde-980e-11e8-9043-0e501804649e"
+#                     )
+#                     print(f"{i} Fulfiled --------------->")
+#                 except Exception as error:
+#                     print(error,"------------->")
+#                     print(i,' dosen\'t full fill request')
+#             if i=="SmallYTChannel" and template["text"]=="Gaming":
+#                 try:
+#                     subreddit = reddit.subreddit(i)
+#                     subreddit.submit(
+#                         title=title,
+#                         # url=channel_url,
+#                         selftext=channel_url+description,
+#                         flair_id=template["id"]
+#                     )
+#                     print(f"{i} Fulfiled --------------->")
+#                 except Exception as error:
+#                     print(error,"------------->")
+#                     print(i,' dosen\'t full fill request')
+#             if i=="youtube" and template["text"]=="Promotion":
+#                 try:
+#                     subreddit = reddit.subreddit(i)
+#                     subreddit.submit(
+#                         title=title,
+#                         # url=channel_url,
+#                         selftext=channel_url+description,
+#                         flair_id=template["id"]
+#                     )
+#                     print(f"{i} Fulfiled --------------->")
+#                 except Exception as error:
+#                     print(error,"------------->")
+#                     print(i,' dosen\'t full fill request')
+#             if i=="YouTubeSubscribeBoost" and template["text"]=="Subscribe!:upvote:":
+#                 try:
+#                     subreddit = reddit.subreddit(i)
+#                     subreddit.submit(
+#                         title=title,
+#                         # url=channel_url,
+#                         selftext=channel_url+description,
+#                         flair_id=template["id"]
+#                     )
+#                     print(f"{i} Fulfiled --------------->")
+#                 except Exception as error:
+#                     print(error,"------------->")
+#                     print(i,' dosen\'t full fill request')
+#     except:
+#         print(f"Can't Find {i} Tags")
 
-
+subreddit = reddit.subreddit("gaming")
+subreddit.submit(
+    title=random.choice(titles),
+    # url=channel_url,
+    selftext=channel_url+random.choice(descriptions)
+    # flair_id="9e727fde-980e-11e8-9043-0e501804649e"
+)
+print(f"gaming Fulfiled --------------->")
 
