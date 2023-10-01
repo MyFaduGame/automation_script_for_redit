@@ -7,6 +7,10 @@ name = "pypi"
 praw = "*"
 google-api-python-client = "*"
 python-dotenv = "*"
+selenium = "*"
+webdriver-manager = "*"
+stem = "*"
+pytube = "*"
 
 [dev-packages]
 

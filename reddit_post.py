@@ -17,10 +17,10 @@ reddit = praw.Reddit(
     user_agent='YourBotUserAgent'
 )
 
-subreddit_name=["r/IndianGaming","r/SmallYTChannel",""]
+# subreddit_name=["r/IndianGaming","r/SmallYTChannel",""]
 
 # Create a new Reddit post
-subreddit = reddit.subreddit("r/youtube")
+# subreddit = reddit.subreddit("r/youtube")
 
 # for subreddit in reddit.user.contributor_subreddits(limit=None):
 #     print(str(subreddit))
@@ -35,7 +35,7 @@ subreddit = reddit.subreddit("r/youtube")
 # for subreddit in reddit.user.subreddits(limit=None):
 #     print(str(subreddit))
 
-list_of_reddits = reddit.user.subreddits(limit=None)
+# list_of_reddits = reddit.user.subreddits(limit=None)
 
 # for reddit_name in list_of_reddits:
 #     print(reddit_name,'----------------->')
@@ -47,8 +47,9 @@ list_of_reddits = reddit.user.subreddits(limit=None)
 #     except:
 #         print("No Flair Found")
 
-for template in reddit.subreddit("gaming").flair.templates:
-    print(template)
+for template in reddit.subreddit("BGMI").flair.link_templates:
+    if template['text'] == '🎮 Gameplay':
+        print(template)
 
 
 
